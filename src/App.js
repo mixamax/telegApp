@@ -3,12 +3,15 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import ItemsContainer from "./components/ItemsContainer";
-
+import { HashRouter, BrowserRouter } from "react-router-dom";
+import RoutesApp from "./components/RoutesApp";
+// "homepage": "/telegApp/",
 function App() {
     return (
         <div className="App">
-            <ItemsContainer />
+            <BrowserRouter>
+                <RoutesApp />
+            </BrowserRouter>
         </div>
     );
 }

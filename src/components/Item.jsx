@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Button } from "@mui/material";
 
-function Item({ name, path, addQuantity }) {
+function Item({ name, path, addQuantity, addItemToCart }) {
     return (
         <Card sx={{ maxWidth: 250 }}>
             <CardActionArea>
@@ -28,7 +28,10 @@ function Item({ name, path, addQuantity }) {
             <Button
                 variant="contained"
                 sx={{ margin: "1rem" }}
-                onClick={addQuantity}
+                onClick={() => {
+                    addQuantity();
+                    addItemToCart(name);
+                }}
             >
                 в корзину
             </Button>

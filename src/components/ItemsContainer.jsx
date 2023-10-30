@@ -1,30 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Button, Box } from "@mui/material";
 import Item from "./Item";
+import { useNavigate } from "react-router-dom";
 
-const items = [
-    { name: "nokia 1680", path: "/img/nokia1680.jpg" },
-    { name: "nokia 3310", path: "/img/nokia3310.jpg" },
-];
+const ItemsContainer = ({ addItemToCart, items, addQuantity, quantity }) => {
+    // const [quantity, setQuantity] = useState(0);
+    const navigate = useNavigate();
 
-const ItemsContainer = () => {
-    const [quantity, setQuantity] = useState(0);
-    const addQuantity = () => {
-        setQuantity((quantity) => quantity + 1);
-    };
-
+    // const addQuantity = () => {
+    //     setQuantity((quantity) => quantity + 1);
+    // };
+    console.log("ItemsContainer");
     return (
-        <Container>
-            <Button variant="contained" sx={{ margin: "3rem" }}>
+        <Container maxWidth="sm">
+            <Button
+                variant="contained"
+                sx={{ margin: "3rem" }}
+                onClick={() => navigate("/cart")}
+            >
                 {quantity}
             </Button>
             <Box sx={{ display: "flex", justifyContent: "space-around" }}>
                 {" "}
                 {items.map((item) => (
                     <Item
+                        key={item.name}
                         name={item.name}
                         path={item.path}
                         addQuantity={addQuantity}
+                        addItemToCart={addItemToCart}
                     ></Item>
                 ))}
             </Box>
