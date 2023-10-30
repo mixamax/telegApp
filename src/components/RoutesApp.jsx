@@ -5,16 +5,16 @@ import Cart from "./Cart";
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 
-// const items = [
-//     { name: "nokia 1680", path: "/telegApp/img/nokia1680.jpg", price: 1000 },
-//     { name: "nokia 3310", path: "/telegApp/img/nokia3310.jpg", price: 1500 },
-// ];
+const items = [
+    { name: "nokia 1680", path: "/telegApp/img/nokia1680.jpg", price: 1000 },
+    { name: "nokia 3310", path: "/telegApp/img/nokia3310.jpg", price: 1500 },
+];
 
 const tg = window.Telegram.WebApp;
-const items = [
-    { name: "nokia 1680", path: "/img/nokia1680.jpg", price: 1000 },
-    { name: "nokia 3310", path: "/img/nokia3310.jpg", price: 1500 },
-];
+// const items = [
+//     { name: "nokia 1680", path: "/img/nokia1680.jpg", price: 1000 },
+//     { name: "nokia 3310", path: "/img/nokia3310.jpg", price: 1500 },
+// ];
 
 export default function RoutesApp() {
     const [cartData, setCartData] = useState({});

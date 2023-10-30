@@ -9,9 +9,9 @@ import RoutesApp from "./components/RoutesApp";
 function App() {
     return (
         <div className="App">
-            <BrowserRouter>
+            <HashRouter>
                 <RoutesApp />
-            </BrowserRouter>
+            </HashRouter>
         </div>
     );
 }
